@@ -223,7 +223,7 @@
 	function onSearchInput(e: Event & { currentTarget: EventTarget & HTMLInputElement }) {
 		const query = e.currentTarget.value.trim().toLowerCase();
 		const filteredRooms = ROOMS.filter((room) => room.name.toLowerCase().includes(query));
-		roomsList = filteredRooms;
+		roomList = filteredRooms;
 	}
 
 	function initCanvas() {
@@ -262,7 +262,7 @@
 		drawCircle(end.x, end.y);
 	}
 
-	let roomsList = $state(ROOMS);
+	let roomList = $state(ROOMS);
 	let currentRoom = $state('');
 
 	let canvas: HTMLCanvasElement;
@@ -301,7 +301,7 @@
 				/>
 			</div>
 
-			{#each roomsList as room}
+			{#each roomList as room}
 				<button
 					class="cursor-pointer px-5 py-4 text-left hover:bg-gray-200"
 					class:bg-blue-500!={currentRoom === room.name}
