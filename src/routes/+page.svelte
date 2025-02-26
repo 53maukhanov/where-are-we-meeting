@@ -415,7 +415,7 @@
 <main class="flex h-dvh w-full">
 	<menu class="relative flex min-w-72 flex-1 flex-col overflow-y-scroll">
 		{#await loadImagesPromise}
-			<p class="absolute top-1/2 left-1/2 -translate-1/2 text-center text-xl">Loading...</p>
+			<p class="absolute top-1/2 left-1/2 -translate-1/2 text-center text-lg">Loading...</p>
 		{:then _}
 			<div class="sticky top-0 bg-white p-2">
 				<input
