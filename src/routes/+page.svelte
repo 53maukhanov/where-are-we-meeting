@@ -229,7 +229,6 @@
 	function initCanvas() {
 		ctx.drawImage(mainFloorImage, 0, 0);
 		ctx.drawImage(upperFloorImage, 450, 2000);
-		drawCircle(385, 855);
 	}
 
 	function clearCanvas() {
