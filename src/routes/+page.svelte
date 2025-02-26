@@ -101,15 +101,18 @@
 	function initCanvas() {
 		ctx.drawImage(mainFloorImage, 0, 0);
 		ctx.drawImage(upperFloorImage, 450, 2000);
-
-		ctx.beginPath();
-		ctx.arc(385, 855, 30, 0, 360, false);
-		ctx.fill();
-		ctx.closePath();
+		drawCircle(385, 855);
 	}
 
 	function clearCanvas() {
 		ctx.clearRect(0, 0, canvas.width * 2, canvas.height * 2);
+	}
+
+	function drawCircle(x: number, y: number) {
+		ctx.beginPath();
+		ctx.arc(x, y, 30, 0, 360, false);
+		ctx.fill();
+		ctx.closePath();
 	}
 
 	function drawFellbachPath() {
@@ -121,10 +124,7 @@
 		ctx.lineTo(415, 1480);
 		ctx.stroke();
 		ctx.closePath();
-		ctx.beginPath();
-		ctx.arc(415, 1480, 30, 0, 360, false);
-		ctx.fill();
-		ctx.closePath();
+		drawCircle(415, 1480);
 	}
 
 	function drawMexicalliPath() {
@@ -139,10 +139,7 @@
 		ctx.lineTo(975, 2300);
 		ctx.stroke();
 		ctx.closePath();
-		ctx.beginPath();
-		ctx.arc(975, 2300, 30, 0, 360, false);
-		ctx.fill();
-		ctx.closePath();
+		drawCircle(975, 2300);
 	}
 
 	function drawStaefaPath() {
@@ -158,10 +155,7 @@
 		ctx.lineTo(1330, 2640);
 		ctx.stroke();
 		ctx.closePath();
-		ctx.beginPath();
-		ctx.arc(1330, 2640, 30, 0, 360, false);
-		ctx.fill();
-		ctx.closePath();
+		drawCircle(1330, 2640);
 	}
 
 	function drawBronPath() {
@@ -177,10 +171,7 @@
 		ctx.lineTo(1700, 2640);
 		ctx.stroke();
 		ctx.closePath();
-		ctx.beginPath();
-		ctx.arc(1700, 2640, 30, 0, 360, false);
-		ctx.fill();
-		ctx.closePath();
+		drawCircle(1700, 2640);
 	}
 
 	function drawPlymouthPath() {
@@ -197,10 +188,7 @@
 		ctx.lineTo(2220, 2940);
 		ctx.stroke();
 		ctx.closePath();
-		ctx.beginPath();
-		ctx.arc(2220, 2940, 30, 0, 360, false);
-		ctx.fill();
-		ctx.closePath();
+		drawCircle(2220, 2940);
 	}
 
 	function drawVianenPath() {
@@ -211,10 +199,7 @@
 		ctx.lineTo(1610, 990);
 		ctx.stroke();
 		ctx.closePath();
-		ctx.beginPath();
-		ctx.arc(1610, 990, 30, 0, 360, false);
-		ctx.fill();
-		ctx.closePath();
+		drawCircle(1610, 990);
 	}
 
 	function drawKitchenerCentrePath() {
@@ -226,10 +211,7 @@
 		ctx.lineTo(1400, 1400);
 		ctx.stroke();
 		ctx.closePath();
-		ctx.beginPath();
-		ctx.arc(1400, 1400, 30, 0, 360, false);
-		ctx.fill();
-		ctx.closePath();
+		drawCircle(1400, 1400);
 	}
 
 	function drawOuterSpacePath() {
@@ -241,10 +223,7 @@
 		ctx.lineTo(250, 50);
 		ctx.stroke();
 		ctx.closePath();
-		ctx.beginPath();
-		ctx.arc(250, 50, 30, 0, 360, false);
-		ctx.fill();
-		ctx.closePath();
+		drawCircle(250, 50);
 	}
 
 	function drawBaulkhamHillsPath() {
@@ -255,10 +234,7 @@
 		ctx.lineTo(740, 320);
 		ctx.stroke();
 		ctx.closePath();
-		ctx.beginPath();
-		ctx.arc(740, 320, 30, 0, 360, false);
-		ctx.fill();
-		ctx.closePath();
+		drawCircle(740, 320);
 	}
 
 	function drawAlicantePath() {
@@ -270,10 +246,7 @@
 		ctx.lineTo(840, 325);
 		ctx.stroke();
 		ctx.closePath();
-		ctx.beginPath();
-		ctx.arc(840, 325, 30, 0, 360, false);
-		ctx.fill();
-		ctx.closePath();
+		drawCircle(840, 325);
 	}
 
 	function drawWarringtonPath() {
@@ -285,10 +258,7 @@
 		ctx.lineTo(925, 320);
 		ctx.stroke();
 		ctx.closePath();
-		ctx.beginPath();
-		ctx.arc(925, 320, 30, 0, 360, false);
-		ctx.fill();
-		ctx.closePath();
+		drawCircle(925, 320);
 	}
 
 	function drawGigglePath() {
@@ -301,10 +271,7 @@
 		ctx.lineTo(1100, 860);
 		ctx.stroke();
 		ctx.closePath();
-		ctx.beginPath();
-		ctx.arc(1100, 860, 30, 0, 360, false);
-		ctx.fill();
-		ctx.closePath();
+		drawCircle(1100, 860);
 	}
 
 	function drawPopPath() {
@@ -317,10 +284,7 @@
 		ctx.lineTo(1100, 725);
 		ctx.stroke();
 		ctx.closePath();
-		ctx.beginPath();
-		ctx.arc(1100, 725, 30, 0, 360, false);
-		ctx.fill();
-		ctx.closePath();
+		drawCircle(1100, 725);
 	}
 
 	function drawPurrPath() {
@@ -333,10 +297,7 @@
 		ctx.lineTo(1100, 570);
 		ctx.stroke();
 		ctx.closePath();
-		ctx.beginPath();
-		ctx.arc(1100, 570, 30, 0, 360, false);
-		ctx.fill();
-		ctx.closePath();
+		drawCircle(1100, 570);
 	}
 
 	function drawRustlePath() {
@@ -349,10 +310,7 @@
 		ctx.lineTo(1100, 490);
 		ctx.stroke();
 		ctx.closePath();
-		ctx.beginPath();
-		ctx.arc(1100, 490, 30, 0, 360, false);
-		ctx.fill();
-		ctx.closePath();
+		drawCircle(1100, 490);
 	}
 
 	function drawTweetPath() {
@@ -365,10 +323,7 @@
 		ctx.lineTo(1100, 435);
 		ctx.stroke();
 		ctx.closePath();
-		ctx.beginPath();
-		ctx.arc(1100, 435, 30, 0, 360, false);
-		ctx.fill();
-		ctx.closePath();
+		drawCircle(1100, 435);
 	}
 
 	function drawVroomPath() {
@@ -381,10 +336,7 @@
 		ctx.lineTo(1100, 370);
 		ctx.stroke();
 		ctx.closePath();
-		ctx.beginPath();
-		ctx.arc(1100, 370, 30, 0, 360, false);
-		ctx.fill();
-		ctx.closePath();
+		drawCircle(1100, 370);
 	}
 
 	let roomsList = $state(ROOMS);
