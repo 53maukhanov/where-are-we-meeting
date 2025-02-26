@@ -318,7 +318,7 @@
 					</button>
 				{/each}
 			{:else}
-				<span class="px-5 py-4 text-red-500">No Meeting Rooms Found</span>
+				<span class="px-5 py-4 text-red-500">No Meeting Room Found</span>
 			{/if}
 		{/await}
 	</menu>
