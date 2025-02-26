@@ -301,21 +301,25 @@
 				/>
 			</div>
 
-			{#each roomList as room}
-				<button
-					class="cursor-pointer px-5 py-4 text-left hover:bg-gray-200"
-					class:bg-blue-500!={currentRoom === room.name}
-					class:text-white={currentRoom === room.name}
-					onclick={() => {
-						currentRoom = room.name;
-						clearCanvas();
-						initCanvas();
-						drawPath(room.path);
-					}}
-				>
-					{room.name}
-				</button>
-			{/each}
+			{#if roomList.length > 0}
+				{#each roomList as room}
+					<button
+						class="cursor-pointer px-5 py-4 text-left hover:bg-gray-200"
+						class:bg-blue-500!={currentRoom === room.name}
+						class:text-white={currentRoom === room.name}
+						onclick={() => {
+							currentRoom = room.name;
+							clearCanvas();
+							initCanvas();
+							drawPath(room.path);
+						}}
+					>
+						{room.name}
+					</button>
+				{/each}
+			{:else}
+				<span class="px-5 py-4 text-red-500">No Meeting Rooms Found</span>
+			{/if}
 		{/await}
 	</menu>
 
