@@ -92,6 +92,12 @@
 		});
 	}
 
+	function onSearchInput(e: Event & { currentTarget: EventTarget & HTMLInputElement }) {
+		const query = e.currentTarget.value.trim().toLowerCase();
+		const filteredRooms = ROOMS.filter((room) => room.name.toLowerCase().includes(query));
+		roomsList = filteredRooms;
+	}
+
 	function initCanvas() {
 		ctx.drawImage(mainFloorImage, 0, 0);
 		ctx.drawImage(upperFloorImage, 450, 2000);
@@ -381,7 +387,8 @@
 		ctx.closePath();
 	}
 
-	let currentPath = $state('');
+	let roomsList = $state(ROOMS);
+	let currentRoom = $state('');
 
 	let canvas: HTMLCanvasElement;
 	let ctx: CanvasRenderingContext2D;
@@ -405,18 +412,27 @@
 	<img src={upperFloor} alt="Upper Floor" bind:this={upperFloorImage} />
 </div>
 
-<main class="w-full h-dvh flex">
-	<menu class="relative min-w-48 flex-1 flex flex-col overflow-y-auto">
+<main class="flex h-dvh w-full">
+	<menu class="relative flex min-w-72 flex-1 flex-col overflow-y-scroll">
 		{#await loadImagesPromise}
 			<p class="absolute top-1/2 left-1/2 -translate-1/2 text-center text-xl">Loading...</p>
 		{:then _}
-			{#each ROOMS as room}
+			<div class="sticky top-0 bg-white p-2">
+				<input
+					type="text"
+					placeholder="Search for Meeting Room"
+					class="w-full rounded-lg bg-gray-200 px-5 py-4 outline-none"
+					oninput={onSearchInput}
+				/>
+			</div>
+
+			{#each roomsList as room}
 				<button
-					class="px-8 py-4 text-center hover:bg-blue-500 hover:text-white cursor-pointer"
-					class:bg-blue-500={currentPath === room.name}
-					class:text-white={currentPath === room.name}
+					class="cursor-pointer px-5 py-4 text-left hover:bg-gray-200"
+					class:bg-blue-500!={currentRoom === room.name}
+					class:text-white={currentRoom === room.name}
 					onclick={() => {
-						currentPath = room.name;
+						currentRoom = room.name;
 						clearCanvas();
 						initCanvas();
 						room.drawPath();
@@ -428,11 +444,11 @@
 		{/await}
 	</menu>
 
-	<div class="relative flex-5 overflow-auto bg-blue-300" class:overflow-hidden={!currentPath}>
+	<div class="relative flex-5 overflow-auto bg-blue-300" class:overflow-hidden={!currentRoom}>
 		<canvas width="1320" height="1780" class="mx-auto" bind:this={canvas}></canvas>
 
-		{#if !currentPath}
-			<p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl text-center">
+		{#if !currentRoom}
+			<p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-2xl">
 				Select a Meeting Room
 			</p>
 		{/if}
