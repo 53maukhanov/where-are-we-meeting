@@ -4,79 +4,207 @@
 	import mainFloor from '$lib/assets/images/main-floor.avif';
 	import upperFloor from '$lib/assets/images/upper-floor.avif';
 
-	type Room = {
+	interface Point {
+		x: number;
+		y: number;
+	}
+
+	interface Room {
 		name: string;
-		drawPath: Function;
-	};
+		path: Point[];
+	}
 
 	const ROOMS: Room[] = [
 		{
 			name: 'Fellbach',
-			drawPath: drawFellbachPath
+			path: [
+				{ x: 385, y: 855 },
+				{ x: 590, y: 855 },
+				{ x: 580, y: 990 },
+				{ x: 470, y: 990 },
+				{ x: 415, y: 1480 }
+			]
 		},
 		{
 			name: 'Mexicalli',
-			drawPath: drawMexicalliPath
+			path: [
+				{ x: 385, y: 855 },
+				{ x: 590, y: 855 },
+				{ x: 580, y: 990 },
+				{ x: 1090, y: 990 },
+				{ x: 1090, y: 1700 },
+				{ x: 1160, y: 1700 },
+				{ x: 1120, y: 2350 },
+				{ x: 975, y: 2300 }
+			]
 		},
 		{
 			name: 'Staefa',
-			drawPath: drawStaefaPath
+			path: [
+				{ x: 385, y: 855 },
+				{ x: 590, y: 855 },
+				{ x: 580, y: 990 },
+				{ x: 1090, y: 990 },
+				{ x: 1090, y: 1700 },
+				{ x: 1160, y: 1700 },
+				{ x: 1120, y: 2820 },
+				{ x: 1320, y: 2820 },
+				{ x: 1330, y: 2640 }
+			]
 		},
 		{
 			name: 'Bron',
-			drawPath: drawBronPath
+			path: [
+				{ x: 385, y: 855 },
+				{ x: 590, y: 855 },
+				{ x: 580, y: 990 },
+				{ x: 1090, y: 990 },
+				{ x: 1090, y: 1700 },
+				{ x: 1160, y: 1700 },
+				{ x: 1120, y: 2820 },
+				{ x: 1700, y: 2820 },
+				{ x: 1700, y: 2640 }
+			]
 		},
 		{
 			name: 'Plymouth',
-			drawPath: drawPlymouthPath
+			path: [
+				{ x: 385, y: 855 },
+				{ x: 385, y: 855 },
+				{ x: 590, y: 855 },
+				{ x: 580, y: 990 },
+				{ x: 1090, y: 990 },
+				{ x: 1090, y: 1700 },
+				{ x: 1160, y: 1700 },
+				{ x: 1120, y: 2820 },
+				{ x: 1920, y: 2820 },
+				{ x: 1940, y: 2940 },
+				{ x: 2220, y: 2940 }
+			]
 		},
 		{
 			name: 'Vianen',
-			drawPath: drawVianenPath
+			path: [
+				{ x: 385, y: 855 },
+				{ x: 590, y: 855 },
+				{ x: 580, y: 990 },
+				{ x: 1610, y: 990 }
+			]
 		},
 		{
 			name: 'Kitchener Centre',
-			drawPath: drawKitchenerCentrePath
+			path: [
+				{ x: 385, y: 855 },
+				{ x: 590, y: 855 },
+				{ x: 580, y: 990 },
+				{ x: 1400, y: 990 },
+				{ x: 1400, y: 1400 }
+			]
 		},
 		{
 			name: 'Outer Space',
-			drawPath: drawOuterSpacePath
+			path: [
+				{ x: 385, y: 855 },
+				{ x: 590, y: 855 },
+				{ x: 660, y: 280 },
+				{ x: 200, y: 280 },
+				{ x: 250, y: 50 }
+			]
 		},
 		{
 			name: 'Baulkham Hills',
-			drawPath: drawBaulkhamHillsPath
+			path: [
+				{ x: 385, y: 855 },
+				{ x: 590, y: 855 },
+				{ x: 660, y: 320 },
+				{ x: 740, y: 320 }
+			]
 		},
 		{
 			name: 'Alicante',
-			drawPath: drawAlicantePath
+			path: [
+				{ x: 385, y: 855 },
+				{ x: 590, y: 855 },
+				{ x: 660, y: 250 },
+				{ x: 850, y: 250 },
+				{ x: 840, y: 325 }
+			]
 		},
 		{
 			name: 'Warrington',
-			drawPath: drawWarringtonPath
+			path: [
+				{ x: 385, y: 855 },
+				{ x: 590, y: 855 },
+				{ x: 660, y: 250 },
+				{ x: 925, y: 250 },
+				{ x: 925, y: 320 }
+			]
 		},
 		{
 			name: 'Giggle',
-			drawPath: drawGigglePath
+			path: [
+				{ x: 385, y: 855 },
+				{ x: 590, y: 855 },
+				{ x: 580, y: 990 },
+				{ x: 1185, y: 990 },
+				{ x: 1185, y: 860 },
+				{ x: 1100, y: 860 }
+			]
 		},
 		{
 			name: 'Pop',
-			drawPath: drawPopPath
+			path: [
+				{ x: 385, y: 855 },
+				{ x: 590, y: 855 },
+				{ x: 620, y: 655 },
+				{ x: 1185, y: 655 },
+				{ x: 1185, y: 725 },
+				{ x: 1100, y: 725 }
+			]
 		},
 		{
 			name: 'Purr',
-			drawPath: drawPurrPath
+			path: [
+				{ x: 385, y: 855 },
+				{ x: 590, y: 855 },
+				{ x: 620, y: 655 },
+				{ x: 1185, y: 655 },
+				{ x: 1185, y: 570 },
+				{ x: 1100, y: 570 }
+			]
 		},
 		{
 			name: 'Rustle',
-			drawPath: drawRustlePath
+			path: [
+				{ x: 385, y: 855 },
+				{ x: 590, y: 855 },
+				{ x: 620, y: 655 },
+				{ x: 1185, y: 655 },
+				{ x: 1185, y: 490 },
+				{ x: 1100, y: 490 }
+			]
 		},
 		{
 			name: 'Tweet',
-			drawPath: drawTweetPath
+			path: [
+				{ x: 385, y: 855 },
+				{ x: 590, y: 855 },
+				{ x: 620, y: 655 },
+				{ x: 1185, y: 655 },
+				{ x: 1185, y: 435 },
+				{ x: 1100, y: 435 }
+			]
 		},
 		{
 			name: 'Vroom',
-			drawPath: drawVroomPath
+			path: [
+				{ x: 385, y: 855 },
+				{ x: 590, y: 855 },
+				{ x: 620, y: 655 },
+				{ x: 1185, y: 655 },
+				{ x: 1185, y: 370 },
+				{ x: 1100, y: 370 }
+			]
 		}
 	];
 
@@ -115,228 +243,24 @@
 		ctx.closePath();
 	}
 
-	function drawFellbachPath() {
-		ctx.beginPath();
-		ctx.moveTo(385, 855);
-		ctx.lineTo(590, 855);
-		ctx.lineTo(580, 990);
-		ctx.lineTo(470, 990);
-		ctx.lineTo(415, 1480);
-		ctx.stroke();
-		ctx.closePath();
-		drawCircle(415, 1480);
-	}
+	function drawPath(path: Point[]) {
+		const start = path[0];
+		const end = path[path.length - 1];
 
-	function drawMexicalliPath() {
-		ctx.beginPath();
-		ctx.moveTo(385, 855);
-		ctx.lineTo(590, 855);
-		ctx.lineTo(580, 990);
-		ctx.lineTo(1090, 990);
-		ctx.lineTo(1090, 1700);
-		ctx.lineTo(1160, 1700);
-		ctx.lineTo(1120, 2350);
-		ctx.lineTo(975, 2300);
-		ctx.stroke();
-		ctx.closePath();
-		drawCircle(975, 2300);
-	}
+		drawCircle(start.x, start.y);
 
-	function drawStaefaPath() {
 		ctx.beginPath();
-		ctx.moveTo(385, 855);
-		ctx.lineTo(590, 855);
-		ctx.lineTo(580, 990);
-		ctx.lineTo(1090, 990);
-		ctx.lineTo(1090, 1700);
-		ctx.lineTo(1160, 1700);
-		ctx.lineTo(1120, 2820);
-		ctx.lineTo(1320, 2820);
-		ctx.lineTo(1330, 2640);
-		ctx.stroke();
-		ctx.closePath();
-		drawCircle(1330, 2640);
-	}
+		ctx.moveTo(start.x, start.y);
 
-	function drawBronPath() {
-		ctx.beginPath();
-		ctx.moveTo(385, 855);
-		ctx.lineTo(590, 855);
-		ctx.lineTo(580, 990);
-		ctx.lineTo(1090, 990);
-		ctx.lineTo(1090, 1700);
-		ctx.lineTo(1160, 1700);
-		ctx.lineTo(1120, 2820);
-		ctx.lineTo(1700, 2820);
-		ctx.lineTo(1700, 2640);
-		ctx.stroke();
-		ctx.closePath();
-		drawCircle(1700, 2640);
-	}
+		for (let i = 1; i < path.length; i++) {
+			const point = path[i];
+			ctx.lineTo(point.x, point.y);
+		}
 
-	function drawPlymouthPath() {
-		ctx.beginPath();
-		ctx.moveTo(385, 855);
-		ctx.lineTo(590, 855);
-		ctx.lineTo(580, 990);
-		ctx.lineTo(1090, 990);
-		ctx.lineTo(1090, 1700);
-		ctx.lineTo(1160, 1700);
-		ctx.lineTo(1120, 2820);
-		ctx.lineTo(1920, 2820);
-		ctx.lineTo(1940, 2940);
-		ctx.lineTo(2220, 2940);
 		ctx.stroke();
 		ctx.closePath();
-		drawCircle(2220, 2940);
-	}
 
-	function drawVianenPath() {
-		ctx.beginPath();
-		ctx.moveTo(385, 855);
-		ctx.lineTo(590, 855);
-		ctx.lineTo(580, 990);
-		ctx.lineTo(1610, 990);
-		ctx.stroke();
-		ctx.closePath();
-		drawCircle(1610, 990);
-	}
-
-	function drawKitchenerCentrePath() {
-		ctx.beginPath();
-		ctx.moveTo(385, 855);
-		ctx.lineTo(590, 855);
-		ctx.lineTo(580, 990);
-		ctx.lineTo(1400, 990);
-		ctx.lineTo(1400, 1400);
-		ctx.stroke();
-		ctx.closePath();
-		drawCircle(1400, 1400);
-	}
-
-	function drawOuterSpacePath() {
-		ctx.beginPath();
-		ctx.moveTo(385, 855);
-		ctx.lineTo(590, 855);
-		ctx.lineTo(660, 280);
-		ctx.lineTo(200, 280);
-		ctx.lineTo(250, 50);
-		ctx.stroke();
-		ctx.closePath();
-		drawCircle(250, 50);
-	}
-
-	function drawBaulkhamHillsPath() {
-		ctx.beginPath();
-		ctx.moveTo(385, 855);
-		ctx.lineTo(590, 855);
-		ctx.lineTo(660, 320);
-		ctx.lineTo(740, 320);
-		ctx.stroke();
-		ctx.closePath();
-		drawCircle(740, 320);
-	}
-
-	function drawAlicantePath() {
-		ctx.beginPath();
-		ctx.moveTo(385, 855);
-		ctx.lineTo(590, 855);
-		ctx.lineTo(660, 250);
-		ctx.lineTo(850, 250);
-		ctx.lineTo(840, 325);
-		ctx.stroke();
-		ctx.closePath();
-		drawCircle(840, 325);
-	}
-
-	function drawWarringtonPath() {
-		ctx.beginPath();
-		ctx.moveTo(385, 855);
-		ctx.lineTo(590, 855);
-		ctx.lineTo(660, 250);
-		ctx.lineTo(925, 250);
-		ctx.lineTo(925, 320);
-		ctx.stroke();
-		ctx.closePath();
-		drawCircle(925, 320);
-	}
-
-	function drawGigglePath() {
-		ctx.beginPath();
-		ctx.moveTo(385, 855);
-		ctx.lineTo(590, 855);
-		ctx.lineTo(580, 990);
-		ctx.lineTo(1185, 990);
-		ctx.lineTo(1185, 860);
-		ctx.lineTo(1100, 860);
-		ctx.stroke();
-		ctx.closePath();
-		drawCircle(1100, 860);
-	}
-
-	function drawPopPath() {
-		ctx.beginPath();
-		ctx.moveTo(385, 855);
-		ctx.lineTo(590, 855);
-		ctx.lineTo(620, 655);
-		ctx.lineTo(1185, 655);
-		ctx.lineTo(1185, 725);
-		ctx.lineTo(1100, 725);
-		ctx.stroke();
-		ctx.closePath();
-		drawCircle(1100, 725);
-	}
-
-	function drawPurrPath() {
-		ctx.beginPath();
-		ctx.moveTo(385, 855);
-		ctx.lineTo(590, 855);
-		ctx.lineTo(620, 655);
-		ctx.lineTo(1185, 655);
-		ctx.lineTo(1185, 570);
-		ctx.lineTo(1100, 570);
-		ctx.stroke();
-		ctx.closePath();
-		drawCircle(1100, 570);
-	}
-
-	function drawRustlePath() {
-		ctx.beginPath();
-		ctx.moveTo(385, 855);
-		ctx.lineTo(590, 855);
-		ctx.lineTo(620, 655);
-		ctx.lineTo(1185, 655);
-		ctx.lineTo(1185, 490);
-		ctx.lineTo(1100, 490);
-		ctx.stroke();
-		ctx.closePath();
-		drawCircle(1100, 490);
-	}
-
-	function drawTweetPath() {
-		ctx.beginPath();
-		ctx.moveTo(385, 855);
-		ctx.lineTo(590, 855);
-		ctx.lineTo(620, 655);
-		ctx.lineTo(1185, 655);
-		ctx.lineTo(1185, 435);
-		ctx.lineTo(1100, 435);
-		ctx.stroke();
-		ctx.closePath();
-		drawCircle(1100, 435);
-	}
-
-	function drawVroomPath() {
-		ctx.beginPath();
-		ctx.moveTo(385, 855);
-		ctx.lineTo(590, 855);
-		ctx.lineTo(620, 655);
-		ctx.lineTo(1185, 655);
-		ctx.lineTo(1185, 370);
-		ctx.lineTo(1100, 370);
-		ctx.stroke();
-		ctx.closePath();
-		drawCircle(1100, 370);
+		drawCircle(end.x, end.y);
 	}
 
 	let roomsList = $state(ROOMS);
@@ -387,7 +311,7 @@
 						currentRoom = room.name;
 						clearCanvas();
 						initCanvas();
-						room.drawPath();
+						drawPath(room.path);
 					}}
 				>
 					{room.name}
